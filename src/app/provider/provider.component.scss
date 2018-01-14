@@ -1,0 +1,10 @@
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  tr.border-bottom {
+    border-bottom: 1px solid #ccc;
+    td.item-padding{
+      padding: 5px 15px;
+    }
+  }
+}

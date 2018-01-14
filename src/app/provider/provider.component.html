@@ -1,0 +1,24 @@
+<div class="main-container">
+
+  <h2>Wikipedia Search</h2>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Search" [formControl]="term">
+  </mat-form-field>
+
+  <div class="table-wrrapre" *ngIf="items">
+    <table>
+      <tr *ngFor="let item of items" class="border-bottom">
+        <td>
+          <mat-checkbox value="{{item}}" (change)="updateCheckedFavorites(item, $event)">
+          </mat-checkbox>
+        </td>
+        <td class="item-padding">
+          {{item}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!-- .table-wrrapre -->
+
+</div>
+<!-- .main-container -->

@@ -1,0 +1,27 @@
+<div class="table-wrrapre" *ngIf="savedItems?.length > 0; else noSavedFavorites">
+  <table>
+    <tr *ngFor="let item of savedItems">
+      <td class="item-padding">
+        <button mat-button color="warn" (click)="removeItem(item)">Remove Item</button>
+      </td>
+      <td class="item-padding">
+        {{item}}
+      </td>
+      <td class="item-padding">
+        <mat-form-field>
+          <textarea matInput placeholder="Add comment" [ngModel]="commentsItems[item]" (ngModelChange)="updateVal($event, item)">
+            {{commentsItems[item]}}
+          </textarea>
+        </mat-form-field>
+        <button mat-button color="primary" (click)="saveComment()">save comment</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #noSavedFavorites>
+  <h2>to save item go to
+    <a [routerLink]="['/']">Home Page</a>
+  </h2>
+
+</ng-template>
